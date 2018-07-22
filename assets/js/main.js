@@ -41,7 +41,12 @@ var projects = {
 	},
 	p04: {
 		ttl: "Striker",
-		img: [""],
+		img: ["17-10-striker/01.png",
+			  "17-10-striker/02.png",
+			  "17-10-striker/03.png",
+			  "17-10-striker/04.png",
+			  "17-10-striker/05.png",
+			  "17-10-striker/06.png"],
 		icon: "sketch/striker.png",
 		en: "This project tackles the problem of individual tasking inability. By posting well described tasks with expected monetary payback, users will be able to receive offers from their vicinity. At the touch of a button, the client role can be changed to the task taker’s and vice versa. With progress control and evaluation system built in, this app associates itself closely with reliability for long-term usability.",
 		de: "Dieses Projekt beschäftigt sich mit dem Problem der Unlösbarkeit bestimmter Aufgaben für einzelne Individuen. Nachdem die Benutzer die beschriebenen Aufgaben mit erwartetem Bezahlungsvorschlag veröffentlichen, bekommen sie Angebote aus ihrer Nähe. Diese App ermöglicht den Rollenwechsel zwischen Auftraggeber und Auftragnehmer. Dank Fortschrittskontrolle und Evaluierungssystem ist sie auf eine langfristige Nutzung ausgerichtet.",
@@ -52,9 +57,7 @@ var projects = {
 		img: ["15-09-three days to see/01.png",
 			  "15-09-three days to see/02.png",
 			  "15-09-three days to see/03.png",
-			  "15-09-three days to see/04.png",
-			  "15-09-three days to see/05.png",
-			  "15-09-three days to see/06.png"],
+			  "15-09-three days to see/04.png"],
 		icon: "sketch/three days to see.png",
 		en: "This zine presents visually impaired children’s interpretation of Helen Keller’s Three Days to See. Supported by a teacher working in a school for the blind, this project attempts to open up communication between both communities, with and without vision problems, for better mutual understanding.",
 		de: "Diese Zine präsentiert eine Interpretation des Essays Drei Tage zum Sehen von Helen Keller aus der Perspektive sehbehinderter Kinder. Mit der Unterstützung einer Lehrerin, die in einer Blindenschule arbeitet, bemüht sich dieses Projekt, die Kommunikation zwischen Gemeinschaften mit und ohne visuellen Problemen zu eröffnen, um besseres gegenseitiges Verständnis zu ermöglichen.",
@@ -87,10 +90,9 @@ var langButton = document.querySelector("#lang");
 var sketch = document.querySelector("#sketch");
 var mainHome = document.querySelector("main.home");
 var headerHome = document.querySelectorAll("span.home");
-var info = document.querySelector("#info");
-var contact = document.querySelector("#contact");
 var index = document.querySelector("#index");
 var aboutMe = document.querySelector("#aboutme");
+var contact = document.querySelector("#contact");
 var mainContent = document.querySelector("main.content");
 var leftButton = document.querySelector("img.left");
 var rightButton = document.querySelector("img.right");
@@ -149,7 +151,6 @@ for (var i = 0; i < headerHome.length; i ++) {
 			headerHome[j].classList.toggle("aboutme");
 		};
 		iconPosition();
-		info.classList.toggle("hidden");
 		contact.classList.toggle("hidden");
 		index.classList.toggle("hidden");
 		aboutMe.classList.toggle("hidden");
@@ -161,7 +162,7 @@ index.addEventListener("mouseover", function(e) {
 	if (e.target.nodeName == "LI" && !mainHome.classList.contains("hidden")) {
 		for (var i = 0; i < sketch.children.length; i ++) {
 			if (sketch.children[i].dataset.project == e.target.innerHTML) {
-				sketch.children[i].style.width = "25%";
+				sketch.children[i].style.height = "25%";
 			};
 		};
 	};
@@ -170,7 +171,7 @@ index.addEventListener("mouseover", function(e) {
 index.addEventListener("mouseout", function() {
 	if (!mainHome.classList.contains("hidden")) {
 		for (var i = 0; i < sketch.children.length; i ++) {
-			sketch.children[i].style.width = "5%";
+			sketch.children[i].style.height = "5%";
 		};
 	};
 });
@@ -183,9 +184,9 @@ index.addEventListener("click", function(e) {
 			sketch.children[i].style.animationPlayState = "paused";
 			if (sketch.children[i].dataset.project == e.target.innerHTML) {
 				sketch.children[i].classList.replace("icon", "sketch");
-				sketch.children[i].style.width = "35%";
+				sketch.children[i].style.height = "35%";
 			} else {
-				sketch.children[i].style.width = "0.1%"
+				sketch.children[i].style.height = "0.1%"
 			};
 		};
 		headerContent.innerHTML = e.target.innerHTML;
@@ -205,7 +206,7 @@ homeButton.addEventListener("click", function() {
 		if (sketch.children[i].classList.contains("sketch")) {
 			sketch.children[i].classList.replace("sketch", "icon");
 		};
-		sketch.children[i].style.width = "5%";
+		sketch.children[i].style.height = "5%";
 		sketch.children[i].style.animationPlayState = "running";
 	};
 	headerReset();
@@ -266,7 +267,7 @@ pic.addEventListener("click", function(e) {
 			};
 			e.target.classList.add("large");
 			oriLeft = e.target.style.left;
-			e.target.style.left = "15vw";
+			e.target.style.left = "12vw";
 		};
 	};
 });
@@ -321,14 +322,14 @@ function nonOverlappingPosition(num, xRange, yRange, w, h) {
 
 function iconPosition() {
 	var iconNumber = sketch.children.length;
-	var iconWidth;
+	var iconHeight;
 
 	for (var i = 0; i < sketch.children.length; i ++) {
 		sketch.children[i].style.animationDelay = Math.random() * 5 + "s";
-		iconWidth = sketch.children[i].offsetWidth;
+		iconHeight = sketch.children[i].offsetHeight;
 	};
 
-	nonOverlappingPosition(iconNumber, window.innerWidth - iconWidth * 3, window.innerHeight - iconWidth * 3, iconWidth, iconWidth);
+	nonOverlappingPosition(iconNumber, window.innerWidth - iconHeight * 3, window.innerHeight - iconHeight * 3, iconHeight, iconHeight);
 
 	for (var i = 0; i < sketch.children.length; i ++) {
 		sketch.children[i].style.left = positions[i].x / window.innerWidth * 100 + "%";
@@ -385,9 +386,9 @@ function headerReset() {
 
 function pageSwitch(current, next) {
 	sketch.children[current].classList.replace("sketch", "icon");
-	sketch.children[current].style.width = "0.1%";
+	sketch.children[current].style.height = "0.1%";
 	sketch.children[next].classList.replace("icon", "sketch");
-	sketch.children[next].style.width = "35%";
+	sketch.children[next].style.height = "35%";
 	headerContent.innerHTML = sketch.children[next].dataset.project;
 	headerContent.setAttribute("data-content", sketch.children[next].dataset.project.toUpperCase());
 	captionGenerate();
