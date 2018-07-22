@@ -103,7 +103,9 @@ span.home, span.home:before, span.content, span.content:before {
 span.home, span.content {
 	-webkit-text-fill-color: transparent;
 	color: transparent;
-	font-family: 'Rambla', sans-serif;	
+	font-family: 'Rambla', sans-serif;
+	font-weight: 700;
+	font-style: italic;
 	text-align: center;
 	text-transform: uppercase;
 	overflow: visible;
@@ -189,6 +191,8 @@ li {
 	top: 65%;
 	font-size: 5vmin;
 	font-family: 'Rambla', sans-serif;
+	font-weight: 700;
+	font-style: italic;
 	line-height: 5vmin;
 	color: black;
 	cursor: pointer;
