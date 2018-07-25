@@ -139,14 +139,20 @@ for (var i = 0; i < headerHome.length; i ++) {
 		addRule("span.home:before", {
 			width: "100%"
 		});
-		banner.classList.toggle("ind");
+
+		if (!banner.classList.contains("ind")) {
+			banner.classList.add("ind");
+		};
 	});
 
 	headerHome[i].addEventListener("mouseout", function() {
 		addRule("span.home:before", {
 			width: "0"
 		});
-		banner.classList.toggle("ind");
+		
+		if (banner.classList.contains("ind")) {
+			banner.classList.remove("ind");
+		};
 	});
 
 	headerHome[i].addEventListener("click", function() {
