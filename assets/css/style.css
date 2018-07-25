@@ -24,7 +24,6 @@ html, body {
 #lang {
 	display: inline-block;
 	position: absolute;
-	height: calc(10px + 0.5vw);
 	right: 0;
 	border: 0;
 	padding: 0;
