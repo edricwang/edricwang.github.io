@@ -90,6 +90,7 @@ var langButton = document.querySelector("#lang");
 var sketch = document.querySelector("#sketch");
 var mainHome = document.querySelector("main.home");
 var headerHome = document.querySelectorAll("span.home");
+var banner = document.querySelector("#banner");
 var index = document.querySelector("#index");
 var aboutMe = document.querySelector("#aboutme");
 var contact = document.querySelector("#contact");
@@ -138,12 +139,14 @@ for (var i = 0; i < headerHome.length; i ++) {
 		addRule("span.home:before", {
 			width: "100%"
 		});
+		banner.classList.toggle("ind");
 	});
 
 	headerHome[i].addEventListener("mouseout", function() {
 		addRule("span.home:before", {
 			width: "0"
 		});
+		banner.classList.toggle("ind");
 	});
 
 	headerHome[i].addEventListener("click", function() {
@@ -325,7 +328,7 @@ function iconPosition() {
 	var iconHeight;
 
 	for (var i = 0; i < sketch.children.length; i ++) {
-		sketch.children[i].style.animationDelay = Math.random() * 5 + "s";
+		sketch.children[i].style.animationDelay = Math.random() * 3 + "s";
 		iconHeight = sketch.children[i].offsetHeight;
 	};
 
