@@ -19,8 +19,8 @@ var projects = {
 	p02: {
 		ttl: "Cooper Hewitt",
 		img: ["16-12-cooper hewitt/01.png",
-			  "16-12-cooper hewitt/02.png",
-			  "16-12-cooper hewitt/03.png"],
+			  "16-12-cooper hewitt/02.gif",
+			  "16-12-cooper hewitt/03.gif"],
 		icon: "sketch/cooper hewitt.png",
 		en: "Cooper Hewitt interface project experiments with unconventional searching methods. The search box is designed as a miniature of the requested objects, integrated with resizing and color changing as the major approach. Playfulness as the focal concept embellishes the whole searching process.",
 		de: "Das Cooper Hewitt Interface-Projekt experimentiert mit unkonventionellen Suchmethoden. Die Suchbox, die die Ansätze der Größen- und Farbenänderung in sich aufnimmt, entwirft sich als eine Miniatur der angeforderten Objekte. Verspieltheit ist das zentrale Konzept dieser Methode, Suchvorgänge schmuckreicher zu gestalten. ",
