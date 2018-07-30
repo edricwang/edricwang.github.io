@@ -272,6 +272,7 @@ img.pic {
 
 img.pic.large {
 	width: 76vw;
+	border: 2px solid black;
 	cursor: zoom-out;
 	z-index: 1;
 }
