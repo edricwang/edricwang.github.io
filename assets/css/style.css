@@ -265,6 +265,7 @@ span.content {
 img.pic {
 	display: block;
 	position: absolute;
+	border: 1px solid black;
 	cursor: zoom-in;
 	z-index: 0;
 }
